@@ -1,0 +1,31 @@
+{
+  "name": "prhone-tools",
+  "version": "1.0.0",
+  "description": "Universal JavaScript Tools",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test/setup.js './**/*.test.js'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/romelperez/prhone-tools.git"
+  },
+  "keywords": [
+    "universal",
+    "tools",
+    "prhone"
+  ],
+  "author": "Romel Pérez (romelperez.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/romelperez/prhone-tools/issues"
+  },
+  "homepage": "https://github.com/romelperez/prhone-tools#readme",
+  "dependencies": {
+    "extend": "^3.0.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0"
+  }
+}
