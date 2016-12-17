@@ -1,6 +1,6 @@
 {
   "name": "prhone-tools",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Universal JavaScript Tools",
   "main": "index.js",
   "scripts": {
@@ -22,7 +22,8 @@
   },
   "homepage": "https://github.com/romelperez/prhone-tools#readme",
   "dependencies": {
-    "extend": "^3.0.0"
+    "extend": "^3.0.0",
+    "lodash": "^4.17.2"
   },
   "devDependencies": {
     "chai": "^3.5.0",
