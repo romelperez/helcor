@@ -1,4 +1,6 @@
 var extend = require('extend');
+var find = require('lodash/find');
+var forEach = require('lodash/forEach');
 
 module.exports = function (_arr1, _arr2, _opts) {
 
@@ -12,16 +14,16 @@ module.exports = function (_arr1, _arr2, _opts) {
   var arr = [];
   var temp1, temp2;
 
-  arr1.forEach(function (a1) {
+  forEach(arr1, function (a1) {
 
-    temp1 = arr.find(function (a) {
+    temp1 = find(arr, function (a) {
       return a[id] === a1[id];
     });
     if (temp1) {
       extend(true, temp1, a1);
     }
 
-    temp2 = arr2.find(function (a2) {
+    temp2 = find(arr2, function (a2) {
       return a2[id] === a1[id];
     });
     if (temp1) {
@@ -35,8 +37,8 @@ module.exports = function (_arr1, _arr2, _opts) {
     }
   });
 
-  arr2.forEach(function (a2) {
-    temp1 = arr.find(function (a) {
+  forEach(arr2, function (a2) {
+    temp1 = find(arr, function (a) {
       return a[id] === a2[id];
     });
     if (!temp1) {
