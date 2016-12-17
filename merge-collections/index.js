@@ -7,19 +7,23 @@ module.exports = function (_arr1, _arr2, _opts) {
   var opts = extend(true, {
     id: 'id'
   }, _opts);
-  var id = opts.id;
 
+  var id = opts.id;
   var arr = [];
   var temp1, temp2;
 
-  arr1.forEach(a1 => {
+  arr1.forEach(function (a1) {
 
-    temp1 = arr.find(a => a[id] === a1[id]);
+    temp1 = arr.find(function (a) {
+      return a[id] === a1[id];
+    });
     if (temp1) {
       extend(true, temp1, a1);
     }
 
-    temp2 = arr2.find(a2 => a2[id] === a1[id]);
+    temp2 = arr2.find(function (a2) {
+      return a2[id] === a1[id];
+    });
     if (temp1) {
       extend(temp1, temp2);
     }
@@ -31,8 +35,10 @@ module.exports = function (_arr1, _arr2, _opts) {
     }
   });
 
-  arr2.forEach(a2 => {
-    temp1 = arr.find(a => a[id] === a2[id]);
+  arr2.forEach(function (a2) {
+    temp1 = arr.find(function (a) {
+      return a[id] === a2[id];
+    });
     if (!temp1) {
       arr.push(a2);
     }
