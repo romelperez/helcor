@@ -81,8 +81,8 @@ describe('throttle', function () {
         expect(fn.callCount).to.equal(3);
 
         done();
-      }, interval + 50);
-    }, interval + 50);
+      }, interval + 10);
+    }, interval + 10);
   });
 
   it('When a gate is provided, it should prevent the throttle if returns true', function (done) {
@@ -125,7 +125,7 @@ describe('throttle', function () {
       expect(fn.callCount).to.equal(7);
 
       done();
-    }, interval + 50);
+    }, interval + 10);
   });
 
   it('Arguments passed to function should be passed to throttle', function () {
