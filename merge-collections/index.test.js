@@ -2,6 +2,10 @@ const merge = require('./index');
 
 describe('merge-collections', function () {
 
+  it('Module is a function', function () {
+    expect(merge).to.be.a.function;
+  });
+
   it('No parameters should return empty array', function () {
     const actual = merge();
     expect(actual).to.eql([]);
