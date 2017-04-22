@@ -59,7 +59,8 @@ expect(actual).to.eql(expected);
 
 ## throttle
 
-Returns a function that will be called once in an interval of time right away when it is called.
+Returns a function that will be called once in an interval of time right away when it is called
+but will not be called more than once per interval no matter how many times you call it.
 
 ### API
 
@@ -72,6 +73,9 @@ Returns a function that will be called once in an interval of time right away wh
 - Returns a function to use as a throttle.
 
 ### Example
+
+A function that will feed you only once every 1 second. In total it will feed you
+three times within 2 seconds (at 0s, 1s and 2s).
 
 ```js
 function feed () {
@@ -87,5 +91,9 @@ setTimeout(() => {
   // ok, 1s passed, eat an orange (CALLED)
   reedRegulated();  // again, you have just eaten, wait 1s more
   reedRegulated();  // wait wait, you'll get fat
+
+  setTimeout(() => {
+    // ok, another 1s passed, eat pizz... no no, eat a banana (CALLED)
+  }, 1000);
 }, 1000);
 ```
