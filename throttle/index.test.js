@@ -2,6 +2,7 @@ const sinon = require('sinon');
 const throttle = require('./index');
 
 describe('throttle', function () {
+  'use strict';
 
   it('Module is a function', function () {
     expect(throttle).to.be.a.function;
