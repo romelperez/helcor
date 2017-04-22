@@ -47,8 +47,8 @@ describe('throttle', function () {
         expect(fn.callCount).to.equal(3);
 
         done();
-      }, interval + 1);
-    }, interval + 1);
+      }, interval + 50);
+    }, interval + 50);
   });
 
   it('A function is called once within 100 ms provided', function (done) {
@@ -81,8 +81,8 @@ describe('throttle', function () {
         expect(fn.callCount).to.equal(3);
 
         done();
-      }, interval + 1);
-    }, interval + 1);
+      }, interval + 50);
+    }, interval + 50);
   });
 
   it('When a gate is provided, it should prevent the throttle if returns true', function (done) {
@@ -125,7 +125,7 @@ describe('throttle', function () {
       expect(fn.callCount).to.equal(7);
 
       done();
-    }, interval + 1);
+    }, interval + 50);
   });
 
   it('Arguments passed to function should be passed to throttle', function () {
