@@ -56,3 +56,36 @@ const expected = [
 
 expect(actual).to.eql(expected);
 ```
+
+## throttle
+
+Returns a function that will be called once in an interval of time right away when it is called.
+
+### API
+
+`throttle(fn [, opts])`
+
+- `Function fn` - Function to throttle.
+- `Object opts` - Optional options.
+  - `Number interval` - Optional time in milliseconds to regulate. Default `1000`.
+  - `Function gate` - Optional function to validate the throttle. If it returns `true`, we prevent the throttle and function will be called as normal.
+- Returns a function to use as a throttle.
+
+### Example
+
+```js
+function feed () {
+  // eat something healthy... really
+}
+const reedRegulated = throttle(feed);
+
+reedRegulated();  // ok, eat an apple (CALLED)
+reedRegulated();  // you have just eaten, I'll do it 1s later
+reedRegulated();  // nope, you have to wait...
+
+setTimeout(() => {
+  // ok, 1s passed, eat an orange (CALLED)
+  reedRegulated();  // again, you have just eaten, wait 1s more
+  reedRegulated();  // wait wait, you'll get fat
+}, 1000);
+```
