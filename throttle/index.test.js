@@ -1,4 +1,3 @@
-const sinon = require('sinon');
 const throttle = require('./index');
 
 describe('throttle', function () {
