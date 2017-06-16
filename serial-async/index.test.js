@@ -1,6 +1,7 @@
 const serialAsync = require('./index');
 
-function makeTask (delay = 100, fails = false) {
+function makeTask (_delay, fails) {
+  const delay = _delay || 100;
   return sinon.stub().callsFake(() => {
     return new Promise((res, rej) => setTimeout(() => fails ? rej() : res(), delay));
   });
