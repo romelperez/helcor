@@ -1,8 +1,10 @@
-var mergeCollections = require('mergeCollections');
-var throttle = require('throttle');
+var mergeCollections = require('./merge-collections');
+var throttle = require('./throttle');
+var concurrent = require('./concurrent');
 
 module.exports = {
-  version: '1.1.0',
+  version: '1.2.0',
   mergeCollections: mergeCollections,
-  throttle: throttle
+  throttle: throttle,
+  concurrent: concurrent,
 };
