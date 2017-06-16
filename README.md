@@ -81,16 +81,16 @@ three times within 2 seconds (at 0s, 1s and 2s).
 function feed () {
   // eat something healthy... really
 }
-const reedRegulated = throttle(feed);
+const feedRegulated = throttle(feed);
 
-reedRegulated();  // ok, eat an apple (CALLED)
-reedRegulated();  // you have just eaten, I'll do it 1s later
-reedRegulated();  // nope, you have to wait...
+feedRegulated();  // ok, eat an apple (CALLED)
+feedRegulated();  // you have just eaten, I'll do it 1s later
+feedRegulated();  // nope, you have to wait...
 
 setTimeout(() => {
   // ok, 1s passed, eat an orange (CALLED)
-  reedRegulated();  // again, you have just eaten, wait 1s more
-  reedRegulated();  // wait wait, you'll get fat
+  feedRegulated();  // again, you have just eaten, wait 1s more
+  feedRegulated();  // wait wait, you'll get fat
 
   setTimeout(() => {
     // ok, another 1s passed, eat pizz... no no, eat a banana (CALLED)
