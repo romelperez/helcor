@@ -128,4 +128,51 @@ describe('serialAsync()', function () {
     setTimeout(done, 1);
   });
 
+  it('A call will return a promise to know when its completion will be', function (done) {
+    const task = makeTask(100);
+    const spy = sinon.spy();
+    const manager = serialAsync('promise', task);
+
+    expect(manager).to.be.a('promise');
+
+    manager.then(spy);
+
+    setTimeout(function () {
+      expect(task).to.have.been.calledOnce;
+      expect(spy).to.have.not.been.called;
+    }, 10);
+
+    setTimeout(function () {
+      expect(task).to.have.been.calledOnce;
+      expect(spy).to.have.been.calledOnce;
+    }, 110);
+
+    setTimeout(done, 150);
+  });
+
+  it('A call will return a promise to know when its completion will be even if it fails', function (done) {
+    const task = makeTask(100, true);
+    const spyResolved = sinon.spy();
+    const spyRejected = sinon.spy();
+    const manager = serialAsync('promise', task);
+
+    expect(manager).to.be.a('promise');
+
+    manager.then(spyResolved, spyRejected);
+
+    setTimeout(function () {
+      expect(task).to.have.been.calledOnce;
+      expect(spyResolved).to.have.not.been.called;
+      expect(spyRejected).to.have.not.been.called;
+    }, 10);
+
+    setTimeout(function () {
+      expect(task).to.have.been.calledOnce;
+      expect(spyResolved).to.have.not.been.called;
+      expect(spyRejected).to.have.been.calledOnce;
+    }, 110);
+
+    setTimeout(done, 150);
+  });
+
 });

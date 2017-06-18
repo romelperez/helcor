@@ -1,27 +1,4 @@
-// List of tasks by name.
-var list = {};
-
-function run (name) {
-  var task = list[name][0];
-  if (task) {
-    task();
-  }
-}
-
-function createTask (name, fn) {
-  return function () {
-    var next = function () {
-      list[name].shift();
-      run(name);
-    };
-    return Promise.
-      resolve().
-      then(function () {
-        return fn();
-      }).
-      then(next, next);
-  };
-}
+var tasks = {};
 
 module.exports = function (name, fn) {
 
@@ -32,14 +9,9 @@ module.exports = function (name, fn) {
     throw new Error('A valid function is required as second parameter.');
   }
 
-  if (!list[name]) {
-    list[name] = [];
-  }
+  var task = (tasks[name] ? tasks[name] : Promise.resolve()).then(fn, fn);
 
-  list[name].push(createTask(name, fn));
+  tasks[name] = task;
 
-  // If the only added item is the current one, run it.
-  if (list[name].length === 1) {
-    run(name);
-  }
+  return tasks[name];
 };
