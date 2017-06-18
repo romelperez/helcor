@@ -98,17 +98,18 @@ setTimeout(() => {
 }, 1000);
 ```
 
-## serial async
+## serial-async
 
 Execute serial asynchronous identified tasks based on promises.
 
 ### API
 
-`serialAsync(name, fn)`
+`Promise serialAsync(name, fn)`
 
 - `String name` - Identifier of the task.
 - `Function fn` - Task to execute in serial. It should return a promise to indicate
 when it finishes to execute the next task in queue.
+- Returns a promise when the task (resolved or rejected) is completed.
 
 ### Example
 
@@ -122,8 +123,8 @@ It should execute in order so:
 const serialAsync = require('prhone-tools/serial-async');
 
 function updateDatabase () {
-  serialAsync('taskName', function () {
-    return SomeThingThatReturnsPromise().
+  return serialAsync('taskName', function () {
+    return somethingThatReturnsPromise().
       then(function () {
         // More async stuff...
       }).
