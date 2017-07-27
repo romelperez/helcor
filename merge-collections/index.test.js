@@ -107,4 +107,21 @@ describe('merge-collections', function () {
     ];
     expect(actual).to.eql(expected);
   });
+
+  it('Shallow merge', function () {
+    const col1 = [
+      { id: 1, p: 10, v: { a: 1, b: 2 }, arr: [1, 2, 3] },
+      { id: 2, p: 10, v: { a: 1, b: 2 }, arr: [9, 8, 7] }
+    ];
+    const col2 = [
+      { id: 1, p: 10, v: { a: 7 }, arr: [7, 4] },
+      { id: 2, p: 10, v: { b: 4 }, arr: [4, 9] }
+    ];
+    const actual = merge(col1, col2, { shallow: true });
+    const expected = [
+      { id: 1, p: 10, v: { a: 7 }, arr: [7, 4] },
+      { id: 2, p: 10, v: { b: 4 }, arr: [4, 9] }
+    ];
+    expect(actual).to.eql(expected);
+  });
 });
