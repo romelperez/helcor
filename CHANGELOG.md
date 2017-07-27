@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v1.4.0 / 2017-07-26
+
+- Added property `shallow` as setting in `merge-collections`.
+
 ## v1.3.0 / 2017-06-17
 
 - Now `serial-async` supports promise as a result when completion.

@@ -26,6 +26,7 @@ Merge two array of objects deeply by identifier.
 - `Array array2` - Collection to merge.
 - `Object options` - Optional options.
   - `String id` - The identifier. Default: `'id'`.
+  - `Boolean shallow` - Shallow extend. Default: `false`.
 - Returns a new collection with the merged items.
 
 ### Example
