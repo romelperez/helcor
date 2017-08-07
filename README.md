@@ -139,3 +139,48 @@ updateDatabase(); // this one will be called right away
 updateDatabase(); // this one will have to wait until current one ends
 updateDatabase(); // this one is also in queue
 ```
+
+## move-in-array
+
+Move an item by position in a list of positionated items.
+
+### API
+
+`Array moveInArray(list [, opts])`
+
+- `Array list` - Current list of items.
+- `Object opts` - Optional options.
+  - `String id` - Element identifier to move.
+  - `Number to` - Position to move element.
+  - `String key` - Element identifier key in the list. Default `'id'`.
+  - `String positionKey` - Element position identifier key in the list. Default `'position'`.
+- Returns a new list with the updated items.
+
+### Example
+
+Move element by id `'i1'` from `1` to position `3` where the id key is `'id'` and
+the position key is `'pos'`.
+
+```js
+const list = [
+  { id: 'i0', pos: 0 },
+  { id: 'i1', pos: 1 },
+  { id: 'i2', pos: 2 },
+  { id: 'i3', pos: 3 },
+  { id: 'i4', pos: 4 }
+];
+const actual = moveInArray(list, {
+  id: 'i1',
+  to: 3,
+  positionKey: 'pos'
+});
+const expected = [
+  { id: 'i0', pos: 0 },
+  { id: 'i1', pos: 3 },  // moved down
+  { id: 'i2', pos: 1 },  // moved up
+  { id: 'i3', pos: 2 },  // moved up
+  { id: 'i4', pos: 4 }
+];
+expect(actual).to.eql(expected);
+expect(actual).to.not.equal(list);
+```

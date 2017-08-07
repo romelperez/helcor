@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v1.5.0 / 2017-08-07
+
+- Add `move-in-array` tool.
+
 ## v1.4.0 / 2017-07-26
 
 - Added property `shallow` as setting in `merge-collections`.
