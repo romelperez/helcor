@@ -58,7 +58,7 @@ module.exports = function moveInArray (_list, _opts) {
     var toUp = positionFrom - positionTo > 0;
 
     // Update all the items between the from and to positions, the only items affected.
-    items = items.map(el => {
+    items = items.map(function (el) {
       var mapped = {};
       if (toUp && el[opts.positionKey] >= positionTo && el[opts.positionKey] < positionFrom) {
         mapped[opts.positionKey] = el[opts.positionKey] + 1;

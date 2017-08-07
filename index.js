@@ -1,10 +1,12 @@
 var mergeCollections = require('./merge-collections');
 var throttle = require('./throttle');
-var concurrent = require('./concurrent');
+var serialAsync = require('./serial-async');
+var moveInArray = require('./move-in-array');
 
 module.exports = {
-  version: '1.2.0',
+  version: '1.5.0',
   mergeCollections: mergeCollections,
   throttle: throttle,
-  concurrent: concurrent,
+  serialAsync: serialAsync,
+  moveInArray: moveInArray,
 };
