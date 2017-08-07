@@ -158,28 +158,29 @@ Move an item by position in a list of positionated items.
 
 ### Example
 
-Move element by id `'i1'` from `1` to position `3` where the id key is `'id'` and
+Move element by id `'i1'` from position `1` to `3` where the id key is `'_id'` and
 the position key is `'pos'`.
 
 ```js
 const list = [
-  { id: 'i0', pos: 0 },
-  { id: 'i1', pos: 1 },
-  { id: 'i2', pos: 2 },
-  { id: 'i3', pos: 3 },
-  { id: 'i4', pos: 4 }
+  { _id: 'i0', pos: 0 },
+  { _id: 'i1', pos: 1 },
+  { _id: 'i2', pos: 2 },
+  { _id: 'i3', pos: 3 },
+  { _id: 'i4', pos: 4 }
 ];
 const actual = moveInArray(list, {
   id: 'i1',
   to: 3,
+  key: '_id',
   positionKey: 'pos'
 });
 const expected = [
-  { id: 'i0', pos: 0 },
-  { id: 'i1', pos: 3 },  // moved down
-  { id: 'i2', pos: 1 },  // moved up
-  { id: 'i3', pos: 2 },  // moved up
-  { id: 'i4', pos: 4 }
+  { _id: 'i0', pos: 0 },
+  { _id: 'i1', pos: 3 },  // moved down
+  { _id: 'i2', pos: 1 },  // moved up
+  { _id: 'i3', pos: 2 },  // moved up
+  { _id: 'i4', pos: 4 }
 ];
 expect(actual).to.eql(expected);
 expect(actual).to.not.equal(list);
