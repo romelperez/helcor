@@ -144,14 +144,14 @@ Move an item by position in a list of positionated items.
 
 ### API
 
-`Array moveInArray(list [, opts])`
+`Array moveInArray(list, opts)`
 
 - `Array list` - Current list of items.
-- `Object opts` - Optional options.
+- `Object opts` - Options.
   - `String id` - Element identifier to move.
   - `Number to` - Position to move element.
-  - `String key` - Element identifier key in the list. Default `'id'`.
-  - `String positionKey` - Element position identifier key in the list. Default `'position'`.
+  - `String key` - Optional element identifier key in the list. Default `'id'`.
+  - `String positionKey` - Optional element position identifier key in the list. Default `'position'`.
 - Returns a new list with the updated items. If no update was made the same list is returned.
 
 ### Example
