@@ -1,6 +1,6 @@
 {
   "name": "prhone-tools",
-  "version": "1.5.2",
+  "version": "1.5.3",
   "description": "Universal JavaScript Tools",
   "main": "index.js",
   "scripts": {
