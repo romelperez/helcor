@@ -1,11 +1,11 @@
 {
   "name": "prhone-tools",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "description": "Universal JavaScript Tools",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test/setup.js './**/*.test.js'",
-    "test:watch": "mocha test/setup.js './**/*.test.js' --watch"
+    "test": "mocha ./test-setup.js './**/*.test.js'",
+    "test:watch": "mocha ./test-setup.js './**/*.test.js' --watch"
   },
   "repository": {
     "type": "git",

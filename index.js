@@ -4,7 +4,7 @@ var serialAsync = require('./serial-async');
 var moveInArray = require('./move-in-array');
 
 module.exports = {
-  version: '1.5.0',
+  version: '1.5.2',
   mergeCollections: mergeCollections,
   throttle: throttle,
   serialAsync: serialAsync,
