@@ -39,22 +39,18 @@ const col1 = [
   { myId: 'x2', v: 'b' },
   { myId: 'x3', v: 'c' }
 ];
-
 const col2 = [
   { myId: 'x1', v: 'x' },
   { myId: 'x2', v: 'y' },
   { myId: 'x4', v: 'd' }
 ];
-
 const actual = mergeCollections(col1, col2, { id: 'myId' });
-
 const expected = [
   { myId: 'x1', v: 'x' },
   { myId: 'x2', v: 'y' },
   { myId: 'x3', v: 'c' },
   { myId: 'x4', v: 'd' }
 ];
-
 expect(actual).to.eql(expected);
 ```
 
@@ -79,22 +75,24 @@ A function that will feed you only once every 1 second. In total it will feed yo
 three times within 2 seconds (at 0s, 1s and 2s).
 
 ```js
+const throttle = require('prhone-tools/throttle');
+
 function feed () {
   // eat something healthy... really
 }
 const feedRegulated = throttle(feed);
 
-feedRegulated();  // ok, eat an apple (CALLED)
+feedRegulated();  // (CALLED) ok, eat an apple
 feedRegulated();  // you have just eaten, I'll do it 1s later
 feedRegulated();  // nope, you have to wait...
 
 setTimeout(() => {
-  // ok, 1s passed, eat an orange (CALLED)
+  // (CALLED) ok, 1s passed, eat an orange
   feedRegulated();  // again, you have just eaten, wait 1s more
   feedRegulated();  // wait wait, you'll get fat
 
   setTimeout(() => {
-    // ok, another 1s passed, eat pizz... no no, eat a banana (CALLED)
+    // (CALLED) ok, another 1s passed, eat pizz... no no, eat a banana
   }, 1000);
 }, 1000);
 ```
@@ -154,7 +152,7 @@ Move an item by position in a list of positionated items.
   - `Number to` - Position to move element.
   - `String key` - Element identifier key in the list. Default `'id'`.
   - `String positionKey` - Element position identifier key in the list. Default `'position'`.
-- Returns a new list with the updated items.
+- Returns a new list with the updated items. If no update was made the same list is returned.
 
 ### Example
 
@@ -162,6 +160,8 @@ Move element by id `'i1'` from position `1` to `3` where the id key is `'_id'` a
 the position key is `'pos'`.
 
 ```js
+const moveInArray = require('prhone-tools/move-in-array');
+
 const list = [
   { _id: 'i0', pos: 0 },
   { _id: 'i1', pos: 1 },
