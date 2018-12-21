@@ -8,7 +8,7 @@
       "allowBranch": [
         "master"
       ],
-      "message": "release: %s"
+      "message": "release: project"
     }
   }
 }
