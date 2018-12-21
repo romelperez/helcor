@@ -1,5 +1,12 @@
 # `@helcor/merge-collections`
 
+<a href="https://npmjs.org/package/@helcor/merge-collections">
+  <img src="https://img.shields.io/npm/v/@helcor/merge-collections.svg" alt="version" />
+</a>
+<a href="https://npmjs.org/package/@helcor/merge-collections">
+  <img src="https://img.shields.io/npm/dm/@helcor/merge-collections.svg" alt="downloads" />
+</a>
+
 Merge two arrays of objects by identifier.
 
 ## API

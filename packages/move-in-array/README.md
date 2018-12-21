@@ -1,5 +1,12 @@
 # `@helcor/move-in-array`
 
+<a href="https://npmjs.org/package/@helcor/move-in-array">
+  <img src="https://img.shields.io/npm/v/@helcor/move-in-array.svg" alt="version" />
+</a>
+<a href="https://npmjs.org/package/@helcor/move-in-array">
+  <img src="https://img.shields.io/npm/dm/@helcor/move-in-array.svg" alt="downloads" />
+</a>
+
 Move an item by position in a list of positionated items.
 
 ## API
