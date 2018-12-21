@@ -1,6 +1,9 @@
 {
   "name": "@helcor/move-in-array",
-  "version": "1.0.0-beta.1",
+  "version": "1.0.0-beta.2",
+  "publishConfig": {
+    "access": "public"
+  },
   "description": "Move an item by position in a list of positionated items",
   "license": "MIT",
   "repository": {
