@@ -1,3 +1,5 @@
+# gitignore
+
 node_modules
 jspm_packages
 bower_components
@@ -6,6 +8,7 @@ pids
 lib-cov
 coverage
 nbproject
+.next
 
 *.log
 *.pid
@@ -23,7 +26,15 @@ nbproject
 .npm
 .node_history
 .node_repl_history
+.vagrant
+.eslintcache
+.DS_Store
 
 Thumbs.db
 dump.rdb
 npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+lib
