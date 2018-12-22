@@ -1,0 +1,17 @@
+{
+  "name": "@helcor/window-sizes",
+  "version": "1.0.0-beta.1",
+  "description": "Browser window dimensions and sizes manipulation.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/romelperez/helcor.git"
+  },
+  "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "dependencies": {
+    "detect-node": "^2.0.4"
+  }
+}

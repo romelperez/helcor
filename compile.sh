@@ -17,5 +17,7 @@ log "Helcor packages compilation..."
 
 build "merge-collections"
 build "move-in-array"
+build "throttle"
+build "window-sizes"
 
 log "\nCompilation completed."
