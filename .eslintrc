@@ -1,5 +1,6 @@
 {
   "extends": [
+    "plugin:flowtype/recommended",
     "eslint:recommended",
     "prettier"
   ],
@@ -16,10 +17,12 @@
   },
 
   "plugins": [
+    "flowtype",
     "prettier"
   ],
 
   "rules": {
-    "quotes": ["error", "single"]
+    "quotes": ["error", "single"],
+    "flowtype/no-types-missing-file-annotation": 0
   }
 }
