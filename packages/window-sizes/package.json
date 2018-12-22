@@ -1,6 +1,9 @@
 {
   "name": "@helcor/window-sizes",
-  "version": "1.0.0-beta.1",
+  "version": "1.0.0-beta.4",
+  "publishConfig": {
+    "access": "public"
+  },
   "description": "Browser window dimensions and sizes manipulation.",
   "license": "MIT",
   "repository": {

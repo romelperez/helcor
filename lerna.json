@@ -2,11 +2,11 @@
   "packages": [
     "packages/*"
   ],
-  "version": "independent",
+  "version": "1.0.0-beta.4",
   "command": {
     "publish": {
       "allowBranch": "master",
-      "message": "release: project"
+      "message": "release: %s"
     }
   }
 }
