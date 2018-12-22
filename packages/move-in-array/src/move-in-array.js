@@ -1,16 +1,6 @@
 import extend from 'extend';
 import mergeCollection from '@helcor/merge-collections';
 
-/**
- * Move item by position in a list of positioned elements.
- * @param  {Array} list - The current list.
- * @param  {Object} [opts] - Options.
- * @param  {String} [opts.id] - Element id to move.
- * @param  {Number} [opts.to] - New position.
- * @param  {String} [opts.key] - List identifier key.
- * @param  {String} [opts.positionKey] - List position key.
- * @return {Array} - The updated list.
- */
 export default function moveInArray(providedList, providedOptions) {
   if (!Array.isArray(providedList)) {
     return [];
