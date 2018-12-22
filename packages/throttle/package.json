@@ -1,0 +1,14 @@
+{
+  "name": "@helcor/throttle",
+  "version": "1.0.0-beta.1",
+  "description": "Create rate-limit controlled functions",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/romelperez/helcor.git"
+  },
+  "main": "lib/index.js",
+  "files": [
+    "lib"
+  ]
+}

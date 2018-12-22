@@ -19,3 +19,4 @@ General Purpose JavaScript Tools.
 | :------------- | :------------- |
 | [`@helcor/merge-collections`](./packages/merge-collections) | Merge two arrays of objects by identifier. |
 | [`@helcor/move-in-array`](./packages/move-in-array) | Move an item by position in a list of positionated items. |
+| [`@helcor/throttle`](./packages/throttle) | Create rate-limit controlled functions. |
