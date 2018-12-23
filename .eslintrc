@@ -1,8 +1,7 @@
 {
   "extends": [
-    "plugin:flowtype/recommended",
-    "eslint:recommended",
-    "prettier"
+    "prettier",
+    "prettier/flowtype"
   ],
 
   "parser": "babel-eslint",
@@ -13,16 +12,12 @@
   },
 
   "env": {
-    "es6": true
+    "es6": true,
+    "browser": true
   },
 
   "plugins": [
-    "flowtype",
-    "prettier"
-  ],
-
-  "rules": {
-    "quotes": ["error", "single"],
-    "flowtype/no-types-missing-file-annotation": 0
-  }
+    "prettier",
+    "flowtype"
+  ]
 }

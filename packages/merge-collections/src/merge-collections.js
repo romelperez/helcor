@@ -1,6 +1,10 @@
 import extend from 'extend';
 
-export default function mergeCollections(arr1 = [], arr2 = [], providedOptions) {
+export default function mergeCollections(
+  arr1 = [],
+  arr2 = [],
+  providedOptions
+) {
   const opts = {
     id: 'id',
     shallow: false,
@@ -40,4 +44,4 @@ export default function mergeCollections(arr1 = [], arr2 = [], providedOptions) 
   });
 
   return arr;
-};
+}

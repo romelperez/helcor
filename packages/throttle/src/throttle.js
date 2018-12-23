@@ -40,4 +40,4 @@ export default function throttle(fn, providedOptions) {
       queue = true;
     }
   };
-};
+}

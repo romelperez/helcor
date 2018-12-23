@@ -23,4 +23,4 @@ export function getElementHeight(element): number {
   }
 
   return calculateElementHeight(element);
-};
+}

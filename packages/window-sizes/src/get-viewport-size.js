@@ -26,7 +26,6 @@ export function getViewportDimension(Name: string): number {
   // WebKit doesn't include scrollbars while calculating viewport size so we
   // have to get fancy.
   else if (window['inner' + Name] != documentElement['client' + Name]) {
-
     // Insert markup to test if a media query will match document.doumentElement["client" + Name]
     var bodyElement = document.createElement('body');
     bodyElement.id = 'vpw-test-b';
@@ -37,9 +36,14 @@ export function getViewportDimension(Name: string): number {
     divElement.style.cssText = 'position:absolute;top:-1000px';
 
     // Getting specific on the CSS selector so it won't get overridden easily.
-    divElement.innerHTML = '<style>@media(' + name + ':' +
-      documentElement['client' + Name] + 'px){body#vpw-test-b div#vpw-test-d{' +
-      name + ':7px!important}}</style>';
+    divElement.innerHTML =
+      '<style>@media(' +
+      name +
+      ':' +
+      documentElement['client' + Name] +
+      'px){body#vpw-test-b div#vpw-test-d{' +
+      name +
+      ':7px!important}}</style>';
     bodyElement.appendChild(divElement);
     documentElement.insertBefore(bodyElement, document.head);
 
@@ -62,11 +66,17 @@ export function getViewportDimension(Name: string): number {
   }
 
   return size;
-};
+}
 
-export function getViewportSize(
-  { wMin, wMax, hMin, hMax }: { wMin: number, wMax: number, hMin: number, hMax: number } = {}
-): { width: number, height: number } {
+export function getViewportSize({
+  wMin,
+  wMax,
+  hMin,
+  hMax
+}: { wMin: number, wMax: number, hMin: number, hMax: number } = {}): {
+  width: number,
+  height: number
+} {
   if (isNode) {
     return VIEWPORT_SIZE_DEFAULT;
   }
@@ -80,4 +90,4 @@ export function getViewportSize(
   height = isNumber(hMax) ? Math.min(height, hMax) : height;
 
   return { width, height };
-};
+}

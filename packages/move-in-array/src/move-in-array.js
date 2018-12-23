@@ -82,4 +82,4 @@ export default function moveInArray(providedList, providedOptions) {
   list = mergeCollection(list, [itemToMove], { id: options.key });
 
   return list;
-};
+}
