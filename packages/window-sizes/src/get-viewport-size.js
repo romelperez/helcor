@@ -68,17 +68,18 @@ export function getViewportDimension(Name: string): number {
   return size;
 }
 
-export function getViewportSize({
-  wMin,
-  wMax,
-  hMin,
-  hMax
-}: { wMin: number, wMax: number, hMin: number, hMax: number } = {}): {
+export function getViewportSize(
+  { wMin, wMax, hMin, hMax }: { wMin: number, wMax: number, hMin: number, hMax: number } = {},
+  defaultSize: { width: number, height: number }
+): {
   width: number,
   height: number
 } {
   if (isNode) {
-    return VIEWPORT_SIZE_DEFAULT;
+    return {
+      ...VIEWPORT_SIZE_DEFAULT,
+      ...defaultSize
+    };
   }
 
   let width = getViewportDimension('Width');

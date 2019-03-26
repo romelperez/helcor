@@ -40,17 +40,10 @@ Get the browser viewport width and height in pixels.
 
 ```js
 import { getViewportSize } from '@helcor/window-sizes';
-getViewportSize({
-    wMin,
-    wMax,
-    hMin,
-    hMax
-}: {
-    wMin: number,
-    wMax: number,
-    hMin: number,
-    hMax: number
-} = {}): { width: number, height: number }
+getViewportSize(
+  { wMin, wMax, hMin, hMax }: { wMin: number, wMax: number, hMin: number, hMax: number } = {},
+  defaultSize: { width: number, height: number }
+): { width: number, height: number }
 ```
 
 ### Example
