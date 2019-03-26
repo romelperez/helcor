@@ -2,7 +2,6 @@
   "name": "helcor",
   "scripts": {
     "postinstall": "lerna bootstrap",
-    "precommit": "npm run test-ci",
     "lint": "eslint ./packages/*/src",
     "format": "prettier --write \"./packages/*/src/**/*.js\"",
     "test": "jest",
@@ -11,6 +10,11 @@
     "changelog": "auto-changelog --output CHANGELOG.md --commit-limit false",
     "compile": "sh ./compile.sh",
     "release": "npm run test-ci && npm run compile && lerna publish"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run test-ci"
+    }
   },
   "dependencies": {
     "@babel/cli": "^7.2.0",
