@@ -10,7 +10,7 @@ build() {
   log "\nCompiling $1..."
   NODE_ENV=production
   rm -rf ./packages/$1/lib/
-  babel ./packages/$1/src --out-dir ./packages/$1/lib/ --ignore '*.test.js' --presets=@babel/preset-flow,@babel/preset-env
+  babel ./packages/$1/src --out-dir ./packages/$1/lib/ --ignore '*.test.js' --presets=@babel/preset-env
 }
 
 log "Helcor packages compilation..."
