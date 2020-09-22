@@ -1,3 +1,5 @@
+![helcor](https://github.com/romelperez/helcor/raw/main/helcor.jpg)
+
 # `@helcor/window-sizes`
 
 <a href="https://npmjs.org/package/@helcor/window-sizes">

@@ -1,3 +1,5 @@
+![helcor](https://github.com/romelperez/helcor/raw/main/helcor.jpg)
+
 # `@helcor/move-in-array`
 
 <a href="https://npmjs.org/package/@helcor/move-in-array">

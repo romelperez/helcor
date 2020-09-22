@@ -1,3 +1,5 @@
+![helcor](https://github.com/romelperez/helcor/raw/main/helcor.jpg)
+
 # `@helcor/throttle`
 
 <a href="https://npmjs.org/package/@helcor/throttle">

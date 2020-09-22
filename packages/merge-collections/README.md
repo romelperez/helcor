@@ -1,3 +1,5 @@
+![helcor](https://github.com/romelperez/helcor/raw/main/helcor.jpg)
+
 # `@helcor/merge-collections`
 
 <a href="https://npmjs.org/package/@helcor/merge-collections">
