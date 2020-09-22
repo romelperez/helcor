@@ -2,14 +2,14 @@
   "name": "helcor",
   "private": true,
   "scripts": {
-    "postinstall": "lerna bootstrap",
+    "postinstall": "lerna bootstrap && npm run compile",
+    "compile": "sh ./compile.sh",
     "lint": "eslint .",
     "lint-fix": "eslint . --fix",
     "test": "jest",
     "test-watch": "jest --watch",
-    "ci": "npm run lint && npm run test",
+    "ci": "lerna bootstrap && npm run compile && npm run lint && npm run test",
     "changelog": "auto-changelog --output CHANGELOG.md --commit-limit false",
-    "compile": "sh ./compile.sh",
     "release": "npm run ci && npm run compile && lerna publish"
   },
   "config": {
