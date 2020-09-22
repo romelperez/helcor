@@ -7,11 +7,11 @@ const VIEWPORT_SIZE_DEFAULT = {
   height: 768
 };
 
-function isNumber(data) {
+function isNumber (data) {
   return typeof data === 'number';
 }
 
-export function getViewportDimension(Name: string): number {
+function getViewportDimension (Name) {
   const name = Name.toLowerCase();
   const document = window.document;
   const documentElement = document.documentElement;
@@ -25,7 +25,7 @@ export function getViewportDimension(Name: string): number {
 
   // WebKit doesn't include scrollbars while calculating viewport size so we
   // have to get fancy.
-  else if (window['inner' + Name] != documentElement['client' + Name]) {
+  else if (window['inner' + Name] !== documentElement['client' + Name]) {
     // Insert markup to test if a media query will match document.doumentElement["client" + Name]
     var bodyElement = document.createElement('body');
     bodyElement.id = 'vpw-test-b';
@@ -68,13 +68,7 @@ export function getViewportDimension(Name: string): number {
   return size;
 }
 
-export function getViewportSize(
-  { wMin, wMax, hMin, hMax }: { wMin: number, wMax: number, hMin: number, hMax: number } = {},
-  defaultSize: { width: number, height: number }
-): {
-  width: number,
-  height: number
-} {
+function getViewportSize ({ wMin, wMax, hMin, hMax } = {}, defaultSize) {
   if (isNode) {
     return {
       ...VIEWPORT_SIZE_DEFAULT,
@@ -92,3 +86,5 @@ export function getViewportSize(
 
   return { width, height };
 }
+
+export { getViewportDimension, getViewportSize };

@@ -1,6 +1,6 @@
 import extend from 'extend';
 
-export default function mergeCollections(
+export default function mergeCollections (
   arr1 = [],
   arr2 = [],
   providedOptions
@@ -28,9 +28,11 @@ export default function mergeCollections(
 
     if (temp1) {
       extend(temp1, temp2);
-    } else if (temp2) {
+    }
+    else if (temp2) {
       arr.push(extend(!shallow, {}, a1, temp2));
-    } else {
+    }
+    else {
       arr.push(a1);
     }
   });

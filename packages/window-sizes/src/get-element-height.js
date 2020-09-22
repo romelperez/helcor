@@ -2,7 +2,7 @@
 
 import isNode from 'detect-node';
 
-export function calculateElementHeight(element): number {
+function calculateElementHeight (element) {
   return Math.max(
     element.scrollHeight,
     element.offsetHeight,
@@ -10,7 +10,7 @@ export function calculateElementHeight(element): number {
   );
 }
 
-export function getElementHeight(element): number {
+function getElementHeight (element) {
   if (isNode) {
     return 0;
   }
@@ -24,3 +24,5 @@ export function getElementHeight(element): number {
 
   return calculateElementHeight(element);
 }
+
+export { calculateElementHeight, getElementHeight };

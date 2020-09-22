@@ -1,6 +1,6 @@
 /* global setTimeout */
 
-export default function throttle(fn, providedOptions) {
+export default function throttle (fn, providedOptions) {
   if (typeof fn !== 'function') {
     throw new Error('Expected function as first parameter.');
   }
@@ -14,11 +14,11 @@ export default function throttle(fn, providedOptions) {
   let available = true;
   let queue = false;
 
-  return function() {
+  return function () {
     const args = arguments;
     const context = this;
 
-    const call = function() {
+    const call = function () {
       available = false;
       fn.apply(context, args);
 
@@ -26,7 +26,8 @@ export default function throttle(fn, providedOptions) {
         if (queue) {
           queue = false;
           call();
-        } else {
+        }
+        else {
           available = true;
         }
       }, options.interval);
@@ -36,7 +37,8 @@ export default function throttle(fn, providedOptions) {
 
     if (available) {
       call();
-    } else {
+    }
+    else {
       queue = true;
     }
   };

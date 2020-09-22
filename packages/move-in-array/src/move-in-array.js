@@ -1,7 +1,7 @@
 import extend from 'extend';
 import mergeCollection from '@helcor/merge-collections';
 
-export default function moveInArray(providedList, providedOptions) {
+export default function moveInArray (providedList, providedOptions) {
   if (!Array.isArray(providedList)) {
     return [];
   }
@@ -11,7 +11,7 @@ export default function moveInArray(providedList, providedOptions) {
   const options = {
     id: '',
     key: 'id',
-    to: void 0,
+    to: undefined,
     positionKey: 'position',
     ...providedOptions
   };
@@ -57,7 +57,8 @@ export default function moveInArray(providedList, providedOptions) {
       ) {
         mapped[options.positionKey] = el[options.positionKey] + 1;
         return extend(el, mapped);
-      } else if (
+      }
+      else if (
         !toUp &&
         el[options.positionKey] <= positionTo &&
         el[options.positionKey] > positionFrom
