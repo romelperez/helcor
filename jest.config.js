@@ -7,7 +7,7 @@ const pkgs = glob.sync('./packages/*').map(p => p.replace(/^\./, '<rootDir>'));
 module.exports = {
   transform: { '^.+\\.js$': '<rootDir>/jest.transform.config.js' },
   testURL: 'http://localhost/',
-  setupTestFrameworkScriptFile: 'jest-extended',
+  setupFilesAfterEnv: ['jest-extended'],
   clearMocks: true,
   roots: pkgs,
   testPathIgnorePatterns: ['/node_modules/', '/lib/'],
