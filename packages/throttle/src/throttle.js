@@ -18,7 +18,7 @@ export default function throttle (fn, providedOptions) {
     const args = arguments;
     const context = this;
 
-    const call = function () {
+    const call = () => {
       available = false;
       fn.apply(context, args);
 
