@@ -1,7 +1,7 @@
-script: npm run ci
+script: npm run integration
 language: node_js
 node_js:
-  - "12.18"
+  - "16.18"
 addons:
   chrome: stable
 sudo: required

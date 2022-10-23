@@ -1,6 +1,12 @@
 {
   "name": "helcor",
   "private": true,
+  "engines": {
+    "node": "^16.18"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
     "postinstall": "lerna bootstrap && npm run compile",
     "compile": "sh ./compile.sh",
@@ -8,9 +14,9 @@
     "lint-fix": "eslint . --fix",
     "test": "jest",
     "test-watch": "jest --watch",
-    "ci": "lerna bootstrap && npm run compile && npm run lint && npm run test",
+    "integration": "lerna bootstrap && npm run compile && npm run lint && npm run test",
     "changelog": "auto-changelog --output CHANGELOG.md --commit-limit false",
-    "release": "npm run ci && npm run compile && lerna publish"
+    "release": "npm run integration && npm run compile && lerna publish"
   },
   "config": {
     "commitizen": {
@@ -19,18 +25,18 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run ci",
+      "pre-commit": "npm run integration",
       "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
   "dependencies": {
-    "@babel/cli": "^7.11.6",
-    "@babel/core": "^7.11.6",
-    "@babel/preset-env": "^7.11.5",
+    "@babel/cli": "^7.19.3",
+    "@babel/core": "^7.19.6",
+    "@babel/preset-env": "^7.19.4",
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
-    "auto-changelog": "^2.2.1",
+    "auto-changelog": "^2.4.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^26.3.0",
@@ -48,7 +54,7 @@
     "husky": "^4.3.0",
     "jest": "^26.4.2",
     "jest-extended": "^0.11.5",
-    "lerna": "^3.22.1",
+    "lerna": "^6.0.1",
     "sinon": "^9.0.3"
   }
 }
